@@ -10,7 +10,7 @@ import {
   Addition,
   Button,
   SearchWrapper,
-
+  
 } from './style';
 
 const Header = (props) => {

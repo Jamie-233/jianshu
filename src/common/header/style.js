@@ -52,18 +52,7 @@ export const NavItem = styled.div`
 export const SearchWrapper = styled.div`
   position: relative;
   float: left;
-  .slide-enter { /* 第一个时刻挂载 */
-    transition: all .3s ease-out;
-  }
-  .slide-enter-active { /* 第一个时刻过去后挂载 */
-    width: 240px;
-  }
-  .slide-exit {
-    transition: all .3s ease-out;
-  }
-  .slide-exit-active {
-    width: 160px;
-  }
+  
   .iconfont {
     position: absolute;
     color: #BABABA;
@@ -102,6 +91,18 @@ export const NavSearch = styled.input.attrs({placeholder: '搜索'})`
   &.focused {
     width: 240px;
     transition: .5s all easa-in;
+  }
+  &.slide-enter { /* 第一个时刻挂载 */
+    transition: all .3s ease-out;
+  }
+  &.slide-enter-active { /* 第一个时刻过去后挂载 */
+    width: 240px;
+  }
+  &.slide-exit {
+    transition: all .3s ease-out;
+  }
+  &.slide-exit-active {
+    width: 160px;
   }
 `;
 
