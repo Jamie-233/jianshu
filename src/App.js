@@ -1,9 +1,12 @@
 import Header from './common/header';
-
+import { Provider } from 'react-redux';
+import store from './store';
 
 const App = () => {
   return (
-    <Header />
+    <Provider store={store}>
+      <Header />
+    </Provider>
   );
 };
 

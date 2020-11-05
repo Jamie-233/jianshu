@@ -1,6 +1,12 @@
-const defaultState = {};
+// 总记录本 记录所有组件里面的 reducer
 
-// 纯函数 有固定格式的入参和出参 不能有副作用
-export default function Reducer(state=defaultState, action) {
-  return state;
-}
+import { combineReducers } from 'redux'; // 合并 reducer
+
+// 默认找 index.js 间接引用 reducer 目录结构减少2层
+import { reducer as headerReducer } from '../common/header/store';
+
+const reducer = combineReducers({
+  header: headerReducer,
+})
+
+export default reducer;
