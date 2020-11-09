@@ -1,10 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
-import {
-  SEARCH_FOCUS,
-  SEARCH_ONBlUR,
-} from './store/actions';
+import { actionCreators }  from './store';
 
 import {
   HeaderWrapper,
@@ -18,7 +15,7 @@ import {
 } from './style';
 
 const Header = (props) => {
-  
+
   return (
     <HeaderWrapper>
       <Logo />
@@ -60,8 +57,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    hanleInputFocus: (state) => dispatch({type: SEARCH_FOCUS}),
-    hanleInputBlur: (state) => dispatch({type: SEARCH_ONBlUR}),
+    hanleInputFocus: (state) => dispatch(actionCreators.serachFocus()),
+    hanleInputBlur: (state) => dispatch(actionCreators.searchBlur()),
   }
 };
 

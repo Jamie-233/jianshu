@@ -1,22 +1,19 @@
-import {
-  SEARCH_FOCUS,
-  SEARCH_ONBlUR,
-} from './actions';
+import * as constants from './constants';
 
 const defaultState = {
   focused: false,
 };
 
-// 纯函数 有固定格式的入参和出参 不能有副作用
+// 纯函数 固定格式的入参和出参
 export default function Reducer(state=defaultState, action) {
   const newState = JSON.parse(JSON.stringify(state));
 
-  if(action.type === SEARCH_FOCUS) {
+  if(action.type === constants.SEARCH_FOCUS) {
     newState.focused = true;
     return newState;
   }
 
-  if(action.type === SEARCH_ONBlUR) {
+  if(action.type === constants.SEARCH_BLUR) {
     newState.focused = false;
     return newState;
   }
